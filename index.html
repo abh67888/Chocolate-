@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chocolate Day Surprise</title>
+    <style>
+        body {
+            text-align: center;
+            background: linear-gradient(to bottom, #3e2723, #5d4037);
+            color: white;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .chocolate {
+            width: 180px;
+            cursor: pointer;
+            transition: transform 0.4s ease-in-out;
+            filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.3));
+        }
+
+        .chocolate:hover {
+            transform: scale(1.2);
+            filter: drop-shadow(0px 0px 15px rgba(255, 255, 255, 0.6));
+        }
+
+        #message {
+            font-size: 2rem;
+            margin-top: 20px;
+            display: none;
+            opacity: 0;
+            color: #FFD700;
+            font-weight: bold;
+            text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.8);
+            transition: opacity 1s ease-in-out;
+        }
+        .tap{
+          font-size: 2rem;
+            margin-top: 20px;
+            font-weight: bold;
+            color: pink;
+            text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.8);
+        }
+
+        #loveMessage {
+            font-size: 2rem;
+            margin-top: 10px;
+            display: none;
+            opacity: 0;
+            font-weight: bold;
+            color: #FF4081;
+            text-shadow: 0px 0px 15px rgba(255, 0, 100, 0.9);
+            animation: heartbeat 1.5s infinite;
+            transition: opacity 1s ease-in-out;
+        }
+
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+<h2 class="tap">Tap</h2>
+    <img src="https://assets.onecompiler.app/42t5f65gt/438gm9x47/1000126475.jpg" 
+         alt="Chocolate" class="chocolate" id="chocolate">
+    
+    <h2 id="message">Happy Chocolate Day!</h2>
+    <p id="loveMessage">I Love You ❤️</p>
+
+    <script>
+        document.getElementById("chocolate").addEventListener("click", function() {
+            document.getElementById("message").style.display = "block";
+            setTimeout(() => {
+                document.getElementById("message").style.opacity = "1";
+                setTimeout(() => {
+                    document.getElementById("loveMessage").style.display = "block";
+                    document.getElementById("loveMessage").style.opacity = "1";
+                }, 1000);
+            }, 500);
+        });
+    </script>
+
+</body>
+</html>
